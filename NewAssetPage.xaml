@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="T2_App.NewAssetPage"
+             Title="New Asset"
+             BackgroundColor="White">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="25" Spacing="20">
+
+            <Grid ColumnDefinitions="*, Auto">
+                <Label Grid.Column="0" Text="New Asset" FontSize="28" FontAttributes="Bold" TextColor="#2B3C58" />
+                <Button Grid.Column="1" Text="+" BackgroundColor="#4A90E2" TextColor="White" CornerRadius="20" WidthRequest="40" HeightRequest="40" />
+            </Grid>
+
+            <Border Stroke="#E0E0E0" StrokeThickness="1" HeightRequest="200" BackgroundColor="#F9F9F9">
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="10" />
+                </Border.StrokeShape>
+                <Image Source="laptop_placeholder.png" Aspect="AspectFit" VerticalOptions="Center" HorizontalOptions="Center" />
+            </Border>
+
+            <VerticalStackLayout Spacing="5">
+                <Entry x:Name="AssetNameEntry" Placeholder="Navn (f.eks. MacBook Pro)" FontSize="18" FontAttributes="Bold" />
+                <Label Text="Status: Available" TextColor="#7ED321" Margin="5,0" />
+                <Picker x:Name="CategoryPicker" Title="Select category" Margin="5,0">
+                    <Picker.ItemsSource>
+                        <x:Array Type="{x:Type x:String}">
+                            <x:String>Laptop</x:String>
+                            <x:String>Firmabil</x:String>
+                            <x:String>Annet IT-utstyr</x:String>
+                        </x:Array>
+                    </Picker.ItemsSource>
+                </Picker>
+            </VerticalStackLayout>
+
+            <Border Padding="15" BackgroundColor="#F0F0F0" StrokeThickness="0">
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="10" />
+                </Border.StrokeShape>
+                <VerticalStackLayout Spacing="5">
+                    <Label Text="Location" FontAttributes="Bold" />
+                    <HorizontalStackLayout Spacing="10">
+                        <Label Text="📍" VerticalOptions="Center" />
+                        <Entry x:Name="LocationEntry" Placeholder="Office 402, second floor" WidthRequest="250" />
+                    </HorizontalStackLayout>
+                </VerticalStackLayout>
+            </Border>
+
+            <Button Text="Save Asset" 
+                    BackgroundColor="#4A90E2" 
+                    TextColor="White" 
+                    HeightRequest="50" 
+                    CornerRadius="25" 
+                    FontAttributes="Bold"
+                    Clicked="OnSaveClicked" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

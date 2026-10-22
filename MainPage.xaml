@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="T2_App.MainPage"
+             BackgroundColor="White">
+    <ScrollView>
+        <VerticalStackLayout Padding="30" Spacing="25">
+            <Label Text="AssetFlow" FontSize="32" FontAttributes="Bold" HorizontalTextAlignment="Center" TextColor="#2B3C58" />
+            <SearchBar Placeholder="Søk etter utstyr..." BackgroundColor="#F0F0F0" Margin="0,0,0,10" />
+
+            <Label Text="Recent Activity" FontSize="20" FontAttributes="Bold" TextColor="#2B3C58" />
+
+            <CollectionView ItemsSource="{Binding Assets}">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Border BackgroundColor="#F0F0F0" Padding="15" Margin="0,0,0,15">
+                            <Border.StrokeShape>
+                                <RoundRectangle CornerRadius="10" />
+                            </Border.StrokeShape>
+                            <VerticalStackLayout Spacing="10">
+                                <HorizontalStackLayout Spacing="20">
+                                    <Label Text="{Binding Icon}" FontSize="24" />
+                                    <VerticalStackLayout>
+                                        <Label Text="{Binding Name}" FontAttributes="Bold" TextColor="Black"/>
+                                        <Label Text="{Binding StatusText}" TextColor="{Binding StatusColor}"/>
+                                    </VerticalStackLayout>
+                                </HorizontalStackLayout>
+                                <Button Text="Åpne skanner" BackgroundColor="#2B3C58" Clicked="OnScannerClicked" HeightRequest="40"/>
+                            </VerticalStackLayout>
+                        </Border>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+            <Button Text="Registrer nytt utstyr" BackgroundColor="#2B3C58" Clicked="OnRegisterNewClicked" HeightRequest="55" CornerRadius="27" />
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

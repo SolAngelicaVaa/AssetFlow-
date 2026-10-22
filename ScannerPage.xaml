@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="T2_App.ScannerPage"
+             BackgroundColor="#A0C4FF">
+    <VerticalStackLayout Padding="30" Spacing="20">
+        <Label Text="SCAN Asset" FontSize="32" FontAttributes="Bold" HorizontalOptions="Center" TextColor="#2B3C58" />
+
+        <Border Stroke="Black" StrokeThickness="2" HeightRequest="300" WidthRequest="300" BackgroundColor="White">
+            <VerticalStackLayout VerticalOptions="Center">
+                <Label Text="[ KAMERA-MODUS ]" HorizontalOptions="Center" TextColor="Gray" />
+                <Button Text="Simuler skanning" Clicked="OnSimulateScanClicked" Margin="20" BackgroundColor="#2B3C58" />
+            </VerticalStackLayout>
+        </Border>
+
+        <Label Text="||| QR - KODE" FontSize="20" HorizontalOptions="Center" Margin="0,20" />
+
+        <HorizontalStackLayout HorizontalOptions="Center" Spacing="30">
+            <Button Text="📷" CornerRadius="30" WidthRequest="60" HeightRequest="60" BackgroundColor="White" />
+            <Button Text="⚠️" CornerRadius="30" WidthRequest="60" HeightRequest="60" BackgroundColor="White" />
+            <Button Text="👤" CornerRadius="30" WidthRequest="60" HeightRequest="60" BackgroundColor="White" />
+        </HorizontalStackLayout>
+    </VerticalStackLayout>
+</ContentPage>
